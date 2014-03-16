@@ -27,7 +27,6 @@ layout: default
       <li><a href="#css-syntax">CSS syntax</a></li>
       <li><a href="#css-declaration-order">Declaration order</a></li>
       <li><a href="#css-media-queries">Media query placement</a></li>
-      <li><a href="#css-prefixed-properties">Prefixed properties</a></li>
       <li><a href="#css-single-declarations">Rules with single declarations</a></li>
       <li><a href="#css-shorthand">Shorthand notation</a></li>
       <li><a href="#css-nesting">Nesting in Less and Sass</a></li>
@@ -40,7 +39,9 @@ layout: default
     <div class="col">
         <h4><a href="#javascript">JavaScript</a></h4>
         <ul>
+            <li><a href="#javascript-principles">General Principles</a></li>
             <li><a href="#javascript-syntax">JavaScript syntax</a></li>
+            <li><a href="#javascript-placement">JavaScript Placement</a></li>
         </ul>
     </div>
 </div>
@@ -189,6 +190,7 @@ layout: default
     <h3>Syntax</h3>
     <ul>
       <li>Use soft tabs with two spaces—they're the only way to guarantee code renders the same in any environment.</li>
+      <li>Don't manually minify, thta's what we have minifiers for.</li>
       <li>When grouping selectors, keep individual selectors to a single line.</li>
       <li>Include one space before the opening brace of declaration blocks for legibility.</li>
       <li>Place closing braces of declaration blocks on a new line.</li>
@@ -235,17 +237,6 @@ layout: default
   </div>
   <div class="col">
     {% highlight css %}{% include css/media-queries.css %}{% endhighlight %}
-  </div>
-</div>
-
-<div class="section" id="css-prefixed-properties">
-  <div class="col">
-    <h3>Prefixed properties</h3>
-    <p>When using vendor prefixed properties, indent each property such that the declaration's value lines up vertically for easy multi-line editing.</p>
-    <p>In Textmate, use <strong>Text &rarr; Edit Each Line in Selection</strong> (&#8963;&#8984;A). In Sublime Text 2, use <strong>Selection &rarr; Add Previous Line</strong> (&#8963;&#8679;&uarr;) and <strong>Selection &rarr;  Add Next Line</strong> (&#8963;&#8679;&darr;).</p>
-  </div>
-  <div class="col">
-    {% highlight css %}{% include css/prefixed-properties.css %}{% endhighlight %}
   </div>
 </div>
 
@@ -370,3 +361,53 @@ layout: default
 <div class="heading" id="javascript">
     <h2>JavaScript</h2>
 </div>
+
+<div class="section" id="javascript-principles">
+    <div class="col">
+        <h3>General Principles</h3>
+        <ul>
+            <li>Use logical names for variables and functions. Always declare them in camelCase.</li>
+            <li>Pollute the global scope as little as possible.</li>
+            <li>Feature detect, never browser detect.</li>
+            <li>Build using either the object literal pattern, or the revealing module pattern.</li>
+            <li>Don't use <code>document.write()</code></li>
+            <li>Constants or configuration variables should be at the top of the file.</li>
+            <li>Use comments generously.</li>
+            <li>Try to wrap your code with anonymous functions to reduce global variables.</li>
+            <li>Code in strict mode for better error handling <code>"use strict";</code>.</li>
+            <li>Prefix jQuery collections with the $ sign. e.g. <code>$header</code>.</li>
+            <li>Functions that function as classes should be declared with a capital letter.</li>
+            <li>Prefix global variables with Global. e.g. <code>GlobalHeader</code></li>
+        </ul>
+    </div>
+    <div class="col">
+        {% highlight js %}{% include js/principles.js %}{% endhighlight %}
+    </div>
+</div>
+
+<div class="section" id="javascript-syntax">
+    <div class="col">
+        <h3>Syntax</h3>
+        <ul>
+            <li>Use soft tabs with two spaces—they're the only way to guarantee code renders the same in any environment.</li>
+            <li>Don't manually minify, that's what we have minifiers for.</li>
+        </ul>
+    </div>
+    <div class="col">
+        {% highlight js %}{% include js/syntax.js %}{% endhighlight %}
+    </div>
+</div>
+
+<div class="section" id="javascript-placement">
+    <div class="col">
+        <h3>Placement</h3>
+        <ul>
+            <li>Almost all JavaScript should be placed in external files, unless small enough to be inlined.</li>
+            <li>All JavaScript should be placed at the end of the <code>&lt;/body&gt;</code> tag. The only exceptions are <a href="http://modernizr.com/">Modernizr</a> or an <a href="https://code.google.com/p/html5shiv/">HTML5Shim/Shiv</a>.</li>
+        </ul>
+    </div>
+    <div class="col">
+        {% highlight html %}{% include js/placement.html %}{% endhighlight %}
+    </div>
+</div>
+
