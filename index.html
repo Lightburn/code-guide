@@ -40,8 +40,8 @@ layout: default
         <h4><a href="#javascript">JavaScript</a></h4>
         <ul>
             <li><a href="#javascript-principles">General Principles</a></li>
-            <li><a href="#javascript-syntax">JavaScript syntax</a></li>
             <li><a href="#javascript-placement">JavaScript Placement</a></li>
+            <li><a href="#javascript-patterns">JavaScript Patterns</a></li>
         </ul>
     </div>
 </div>
@@ -198,7 +198,6 @@ layout: default
       <li>Each declaration should appear on its own line for more accurate error reporting.</li>
       <li>End all declarations with a semi-colon. The last declaration's is optional, but your code is more error prone without it.</li>
       <li>Comma-separated property values should include a space after each comma (e.g., <code>box-shadow</code>).</li>
-      <li>Don't include spaces after commas <em>within</em> <code>rgb()</code>, <code>rgba()</code>, <code>hsl()</code>, <code>hsla()</code>, or <code>rect()</code> values. This helps differentiate multiple color values (comma, no space) from multiple property values (comma with space). Also, don't prefix values with a leading zero (e.g., <code>.5</code> instead of <code>0.5</code>).</li>
       <li>Lowercase all hex values, e.g., <code>#fff</code>. Lowercase letters are much easier to discern when scanning a document as they tend to have more unique shapes.</li>
       <li>Use shorthand hex values where available, e.g., <code>#fff</code> instead of <code>#ffffff</code>.</li>
       <li>Quote attribute values in selectors, e.g., <code>input[type="text"]</code>. <a href="http://mathiasbynens.be/notes/unquoted-attribute-values#css">They’re only optional in some cases</a>, and it’s a good practice for consistency.</li>
@@ -364,12 +363,12 @@ layout: default
 
 <div class="section" id="javascript-principles">
     <div class="col">
-        <h3>General Principles</h3>
+        <h3>General Principles / Syntax</h3>
         <ul>
             <li>Use logical names for variables and functions. Always declare them in camelCase.</li>
+            <li>Don't manually minify, that's what we have minifiers for.</li>
             <li>Pollute the global scope as little as possible.</li>
             <li>Feature detect, never browser detect. <a href="http://modernizr.com">Modernizr</a> is what you should be using to do this.</li>
-            <li>Build using either the object literal pattern, or the revealing module pattern.</li>
             <li>Don't use <code>document.write()</code></li>
             <li>Constants or configuration variables should be at the top of the file.</li>
             <li>Use comments generously.</li>
@@ -378,23 +377,11 @@ layout: default
             <li>Prefix jQuery collections with the $ sign. e.g. <code>$header</code>.</li>
             <li>Functions that function as classes should be declared with a capital letter.</li>
             <li>Prefix global variables with Global. e.g. <code>GlobalHeader</code></li>
+            <li>Reduce dependencies to third party code to as little as possible.</li>
         </ul>
     </div>
     <div class="col">
         {% highlight js %}{% include js/principles.js %}{% endhighlight %}
-    </div>
-</div>
-
-<div class="section" id="javascript-syntax">
-    <div class="col">
-        <h3>Syntax</h3>
-        <ul>
-            <li>Use soft tabs with two spaces—they're the only way to guarantee code renders the same in any environment.</li>
-            <li>Don't manually minify, that's what we have minifiers for.</li>
-        </ul>
-    </div>
-    <div class="col">
-        {% highlight js %}{% include js/syntax.js %}{% endhighlight %}
     </div>
 </div>
 
@@ -411,3 +398,16 @@ layout: default
     </div>
 </div>
 
+
+<div class="section" id="javascript-patterns">
+    <div class="col">
+        <h3>Patterns</h3>
+        <ul>
+            <li>Build using either the object literal pattern, or the revealing module pattern.</li>
+            <li>Wrap you code in an Immediately Invoked Function Execution (or IIFE)</li>
+        </ul>
+    </div>
+    <div class="col">
+        {% highlight js %}{% include js/patterns.js %}{% endhighlight %}
+    </div>
+</div>

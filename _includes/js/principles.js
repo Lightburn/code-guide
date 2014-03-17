@@ -1,12 +1,16 @@
+/* Bad */
+function p()
+{
+    function init (){
+
+    }
+}
+
+/* Good */
 $(function(window, document, undefined) {
   "use strict";
 
-    var modal = {
-      init: function() {
-
-      }
-    };
-
+    /* Individual popup element */
     function Popup(config) {
         var settings = $.extend({
             class: ""
