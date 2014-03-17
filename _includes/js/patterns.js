@@ -1,23 +1,23 @@
 /* Object literal pattern */
 var modal = {
-    init: function() {
+  init: function() {
 
-    }
+  }
 };
 
 /* Revealing module pattern / written like a Class */
 function Popup(config) {
-    var settings = $.extend({
-        class: ""
-    }, config);
+  var settings = $.extend({
+    class: ""
+  }, config);
 
-    function init() {
+  function init() {
 
-    }
+  }
 
-    init();
+  init();
 
-    return {
+  return {
 
-    };
+  };
 }

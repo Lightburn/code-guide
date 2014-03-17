@@ -36,14 +36,14 @@ layout: default
       <li><a href="#css-organization">Organization</a></li>
     </ul>
   </div>
-    <div class="col">
-        <h4><a href="#javascript">JavaScript</a></h4>
-        <ul>
-            <li><a href="#javascript-principles">General Principles</a></li>
-            <li><a href="#javascript-placement">JavaScript Placement</a></li>
-            <li><a href="#javascript-patterns">JavaScript Patterns</a></li>
-        </ul>
-    </div>
+  <div class="col">
+    <h4><a href="#javascript">JavaScript</a></h4>
+    <ul>
+      <li><a href="#javascript-principles">General Principles</a></li>
+      <li><a href="#javascript-placement">JavaScript Placement</a></li>
+      <li><a href="#javascript-patterns">JavaScript Patterns</a></li>
+    </ul>
+  </div>
 </div>
 
 
@@ -358,56 +358,55 @@ layout: default
 </div>
 
 <div class="heading" id="javascript">
-    <h2>JavaScript</h2>
+  <h2>JavaScript</h2>
 </div>
 
 <div class="section" id="javascript-principles">
-    <div class="col">
-        <h3>General Principles / Syntax</h3>
-        <ul>
-            <li>Use logical names for variables and functions. Always declare them in camelCase.</li>
-            <li>Don't manually minify, that's what we have minifiers for.</li>
-            <li>Pollute the global scope as little as possible.</li>
-            <li>Feature detect, never browser detect. <a href="http://modernizr.com">Modernizr</a> is what you should be using to do this.</li>
-            <li>Don't use <code>document.write()</code></li>
-            <li>Constants or configuration variables should be at the top of the file.</li>
-            <li>Use comments generously.</li>
-            <li>Try to wrap your code with anonymous functions to reduce global variables.</li>
-            <li>Code in strict mode for better error handling <code>"use strict";</code>.</li>
-            <li>Prefix jQuery collections with the $ sign. e.g. <code>$header</code>.</li>
-            <li>Functions that function as classes should be declared with a capital letter.</li>
-            <li>Prefix global variables with Global. e.g. <code>GlobalHeader</code></li>
-            <li>Reduce dependencies to third party code to as little as possible.</li>
-        </ul>
-    </div>
-    <div class="col">
-        {% highlight js %}{% include js/principles.js %}{% endhighlight %}
-    </div>
+  <div class="col">
+    <h3>General Principles / Syntax</h3>
+    <ul>
+      <li>Use logical names for variables and functions. Always declare them in camelCase.</li>
+      <li>Don't manually minify, that's what we have minifiers for.</li>
+      <li>Feature detect, never browser detect. <a href="http://modernizr.com">Modernizr</a> is what you should be using to do this.</li>
+      <li>Don't use <code>document.write()</code></li>
+      <li>Constants or configuration variables should be at the top of the file or function.</li>
+      <li>Use comments generously, but make sure to provide context.</li>
+      <li>Try to wrap your code with IIFE's (Immediately Invoked Function Execution or anonymous functions) to reduce global variables and control scoping.</li>
+      <li>Code in <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/Strict_mode">strict mode</a> for better error handling <code>"use strict";</code>.</li>
+      <li>Prefix jQuery collections with the $ sign. e.g. <code>$header</code>.</li>
+      <li>Functions that function as classes should be declared with a capital letter.</li>
+      <li>Prefix global variables with Global. e.g. <code>GlobalHeader</code></li>
+      <li>Reduce dependencies on third party code to as little as possible.</li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight js %}{% include js/principles.js %}{% endhighlight %}
+  </div>
 </div>
 
 <div class="section" id="javascript-placement">
-    <div class="col">
-        <h3>Placement</h3>
-        <ul>
-            <li>Almost all JavaScript should be placed in external files, unless small enough to be inlined.</li>
-            <li>All JavaScript should be placed at the end of the <code>&lt;/body&gt;</code> tag. The only exceptions are <a href="http://modernizr.com/">Modernizr</a> or an <a href="https://code.google.com/p/html5shiv/">HTML5Shim/Shiv</a>.</li>
-        </ul>
-    </div>
-    <div class="col">
-        {% highlight html %}{% include js/placement.html %}{% endhighlight %}
-    </div>
+  <div class="col">
+    <h3>Placement</h3>
+    <ul>
+      <li>99% of JavaScript should be placed in external files, unless small enough to be inlined.</li>
+      <li>All JavaScript should be placed at the end of the <code>&lt;/body&gt;</code> tag. The only exceptions are <a href="http://modernizr.com/">Modernizr</a> or an <a href="https://code.google.com/p/html5shiv/">HTML5Shim/Shiv</a>.</li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include js/placement.html %}{% endhighlight %}
+  </div>
 </div>
 
 
 <div class="section" id="javascript-patterns">
-    <div class="col">
-        <h3>Patterns</h3>
-        <ul>
-            <li>Build using either the object literal pattern, or the revealing module pattern.</li>
-            <li>Wrap you code in an Immediately Invoked Function Execution (or IIFE)</li>
-        </ul>
-    </div>
-    <div class="col">
-        {% highlight js %}{% include js/patterns.js %}{% endhighlight %}
-    </div>
+  <div class="col">
+    <h3>Patterns</h3>
+    <ul>
+      <li>Build using either the object literal pattern, or the revealing module pattern.</li>
+      <li>Wrap your code in an Immediately Invoked Function Execution (or IIFE)</li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight js %}{% include js/patterns.js %}{% endhighlight %}
+  </div>
 </div>

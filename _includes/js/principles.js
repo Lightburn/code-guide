@@ -1,30 +1,34 @@
 /* Bad */
-function p()
+function p(c)
 {
-    function init (){
+  function init (){
 
-    }
+  }
+
+  var s = $.extend({
+    class: ""
+  }, c);
 }
 
 /* Good */
 $(function(window, document, undefined) {
   "use strict";
 
-    /* Individual popup element */
-    function Popup(config) {
-        var settings = $.extend({
-            class: ""
-        }, config);
+  /* Individual popup element */
+  function Popup(config) {
+    var settings = $.extend({
+      class: ""
+    }, config);
 
-        function init() {
+    function init() {
 
-        }
-
-        init();
-
-        return {
-
-        };
     }
+
+    init();
+
+    return {
+
+    };
+  }
 
 })(this, this.document);
