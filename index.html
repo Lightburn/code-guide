@@ -431,9 +431,9 @@ layout: default
     <ul>
       <li>Make sure gzipping or mod deflate is enabled.</li>
       <li>Minify CSS and JavaScript for smaller file size, plus other added benefits.</li>
-      <li>Combine CSS and JavaScript files into one file where possible to reduce the number of requests.</li>
-      <li>Limit file requests, each one has a cost. Link to only a few domains, every domain included has to have it's DNS looked up, which costs time.</li>
-      <li>Optimize images using compression to reduce their size.</li>
+      <li>Combine CSS and JavaScript files into one file to reduce the number of page requests.</li>
+      <li>Limit page requests, each one has a cost. Link to only a few domains, every domain included has to have its DNS looked up, which costs time.</li>
+      <li>Optimize images using compression to reduce their size. Visual Studio has an <a href="http://visualstudiogallery.msdn.microsoft.com/a56eddd3-d79b-48ac-8c8f-2db06ade77c3">extension</a> to optimize images for you.</li>
     </ul>
     <h4>Links</h4>
     <ul>
@@ -463,12 +463,12 @@ layout: default
   <div class="col">
     <h3>JavaScript</h3>
     <ul>
-      <li>Cache jQuery collections when used more than twice.</li>
+      <li>Cache jQuery collections when used more than once.</li>
       <li>JavaScript should always be located right before the end <code>&lt;body&gt;</code> tag to reduce resource blocking.</li>
       <li>Load in JavaScript <code>async</code> to reduce blocking of other resources.</li>
       <li>Use smart selectors, generic attribute selectors are slow <code>[href*="/test"]</code>. If you can narrow the search, do it <code>#header [href*="/test"]</code>.</li>
       <li>Use <a href="https://learn.jquery.com/events/event-delegation/">event delegation</a> instead of adding listeners to multiple elements. jQuery makes this easy with <code>.on</code>.</li>
-      <li>ID selectors are the fastest, use them if possible.</li>
+      <li>ID selectors are the fastest, tags are second, and classes are third. Avoid the universal selector <code>*</code>.</li>
       <li><code>$.each</code> is slow. Use a native <code>for</code> loop where possible and definitely when looping over a large amount of elements.</li>
     </ul>
   </div>
