@@ -36,12 +36,22 @@ layout: default
       <li><a href="#css-organization">Organization</a></li>
     </ul>
   </div>
+</div>
+<div class="section toc">
   <div class="col">
     <h4><a href="#javascript">JavaScript</a></h4>
     <ul>
       <li><a href="#javascript-principles">General Principles</a></li>
       <li><a href="#javascript-placement">JavaScript Placement</a></li>
       <li><a href="#javascript-patterns">JavaScript Patterns</a></li>
+    </ul>
+  </div>
+  <div class="col">
+    <h4><a href="#performance">Performance</a></h4>
+    <ul>
+      <li><a href="#performance-principles">General Principles</a></li>
+      <li><a href="#performance-css">CSS Performance</a></li>
+      <li><a href="#performance-javascript">JavaScript Performance</a></li>
     </ul>
   </div>
 </div>
@@ -371,12 +381,12 @@ layout: default
       <li>Don't use <code>document.write()</code></li>
       <li>Constants or configuration variables should be at the top of the file or function.</li>
       <li>Use comments generously, but make sure to provide context.</li>
-      <li>Try to wrap your code with IIFE's (Immediately Invoked Function Execution or anonymous functions) to reduce global variables and control scoping.</li>
+      <li>Try to wrap your code with IIFE's (Immediately Invoked Function Execution or anonymous functions) to reduce global variables and control scope.</li>
       <li>Code in <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/Strict_mode">strict mode</a> for better error handling <code>"use strict";</code>.</li>
       <li>Prefix jQuery collections with the $ sign. e.g. <code>$header</code>.</li>
       <li>Functions that function as classes should be declared with a capital letter.</li>
       <li>Prefix global variables with Global. e.g. <code>GlobalHeader</code></li>
-      <li>Reduce dependencies on third party code to as little as possible.</li>
+      <li>Reduce dependencies on third party code.</li>
     </ul>
   </div>
   <div class="col">
@@ -408,5 +418,61 @@ layout: default
   </div>
   <div class="col">
     {% highlight js %}{% include js/patterns.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="heading" id="performance">
+  <h2>Performance</h2>
+</div>
+
+<div class="section" id="performance-principles">
+  <div class="col">
+    <h3>General Principles</h3>
+    <ul>
+      <li>Make sure gzipping or mod deflate is enabled.</li>
+      <li>Minify CSS and JavaScript for smaller file size, plus other added benefits.</li>
+      <li>Combine CSS and JavaScript files into one file where possible to reduce the number of requests.</li>
+      <li>Limit file requests, each one has a cost. Link to only a few domains, every domain included has to have it's DNS looked up, which costs time.</li>
+      <li>Optimize images using compression to reduce their size.</li>
+    </ul>
+    <h4>Links</h4>
+    <ul>
+      <li><a href="https://developers.google.com/speed/docs/best-practices/rules_intro">Web Performance Best Practices</a></li>
+      <li><a href="http://developer.yahoo.com/blogs/ydn/high-performance-sites-rule-9-reduce-dns-lookups-7207.html">DNS Lookup</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="section" id="performance-css">
+  <div class="col">
+    <h3>CSS</h3>
+    <ul>
+      <li>Nest a maximum of three levels <code>.nav ul li</code>. Any more than that can have performance implications.</li>
+      <li>Reduce number of generic attribute selectors <code>[href*="/test"]</code>. They are slow and have to search through every element.</li>
+      <li>Optimize selectors to be as efficient as possible.</li>
+      <li>Use OOCSS to reuse classes and make your CSS more efficient.</li>
+      <li>CSS should always be located in the <code>&lt;head&gt;</code> and before any JavaScript to speed up rendering of the page.</li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight css %}{% include performance/performance.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="performance-javascript">
+  <div class="col">
+    <h3>JavaScript</h3>
+    <ul>
+      <li>Cache jQuery collections when used more than twice.</li>
+      <li>JavaScript should always be located right before the end <code>&lt;body&gt;</code> tag to reduce resource blocking.</li>
+      <li>Load in JavaScript <code>async</code> to reduce blocking of other resources.</li>
+      <li>Use smart selectors, generic attribute selectors are slow <code>[href*="/test"]</code>. If you can narrow the search, do it <code>#header [href*="/test"]</code>.</li>
+      <li>Use <a href="https://learn.jquery.com/events/event-delegation/">event delegation</a> instead of adding listeners to multiple elements. jQuery makes this easy with <code>.on</code>.</li>
+      <li>ID selectors are the fastest, use them if possible.</li>
+      <li><code>$.each</code> is slow. Use a native <code>for</code> loop where possible and definitely when looping over a large amount of elements.</li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight js %}{% include performance/performance.js %}{% endhighlight %}
   </div>
 </div>

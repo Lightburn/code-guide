@@ -1,0 +1,12 @@
+/* Bad example */
+a#header ul .list-item {
+  ...
+}
+
+/* Good example */
+.modal-header {
+  ...
+}
+.modal-title {
+  ...
+}
