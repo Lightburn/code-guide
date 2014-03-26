@@ -25,10 +25,8 @@ layout: default
     <h4><a href="#css">CSS</a></h4>
     <ul>
       <li><a href="#css-syntax">CSS syntax</a></li>
-      <li><a href="#css-declaration-order">Declaration order</a></li>
       <li><a href="#css-media-queries">Media query placement</a></li>
       <li><a href="#css-single-declarations">Rules with single declarations</a></li>
-      <li><a href="#css-shorthand">Shorthand notation</a></li>
       <li><a href="#css-nesting">Nesting in Less and Sass</a></li>
       <li><a href="#css-comments">Comments</a></li>
       <li><a href="#css-classes">Classes</a></li>
@@ -220,25 +218,6 @@ layout: default
   </div>
 </div>
 
-<div class="section" id="css-declaration-order">
-  <div class="col">
-    <h3>Declaration order</h3>
-    <p>Related property declarations should be grouped together following the order:</p>
-    <ol>
-      <li>Positioning</li>
-      <li>Box model</li>
-      <li>Typographic</li>
-      <li>Visual</li>
-    </ol>
-    <p>Positioning comes first because it can remove an element from the normal flow of the document and override box model related styles. The box model comes next as it dictates a component's dimensions and placement.</p>
-    <p>Everything else takes place <em>inside</em> the component or without impacting the previous two sections, and thus they come last.</p>
-    <p>For a complete list of properties and their order, please see <a href="http://twitter.github.com/recess">Recess</a>.</p>
-  </div>
-  <div class="col">
-    {% highlight css %}{% include css/declaration-order.css %}{% endhighlight %}
-  </div>
-</div>
-
 <div class="section" id="css-media-queries">
   <div class="col">
     <h3>Media query placement</h3>
@@ -257,26 +236,6 @@ layout: default
   </div>
   <div class="col">
     {% highlight css %}{% include css/single-declarations.css %}{% endhighlight %}
-  </div>
-</div>
-
-<div class="section" id="css-shorthand">
-  <div class="col">
-    <h3>Shorthand notation</h3>
-    <p>Strive to limit use of shorthand declarations to instances where you must explicitly set all the available values. Common overused shorthand properties include:</p>
-    <ul>
-      <li><code>padding</code></li>
-      <li><code>margin</code></li>
-      <li><code>font</code></li>
-      <li><code>background</code></li>
-      <li><code>border</code></li>
-      <li><code>border-radius</code></li>
-    </ul>
-    <p>Often times we don't need to set all the values a shorthand property represents. For example, HTML headings only set top and bottom margin, so when necessary, only override those two values. Excessive use of shorthand properties often leads to sloppier code with unnecessary overrides and unintended side effects.</p>
-    <p>The Mozilla Developer Network has a great article on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties">shorthand properties</a> for those unfamiliar with notation and behavior.</p>
-  </div>
-  <div class="col">
-    {% highlight css %}{% include css/shorthand.css %}{% endhighlight %}
   </div>
 </div>
 
