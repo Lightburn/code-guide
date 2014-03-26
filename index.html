@@ -433,6 +433,7 @@ layout: default
       <li>Combine CSS and JavaScript files into one file to reduce the number of page requests.</li>
       <li>Limit page requests, each one has a cost. Link to only a few domains, every domain included has to have its DNS looked up, which costs time.</li>
       <li>Optimize images using compression to reduce their size. Visual Studio has an <a href="http://visualstudiogallery.msdn.microsoft.com/a56eddd3-d79b-48ac-8c8f-2db06ade77c3">extension</a> to optimize images for you.</li>
+      <li>Use image sprites or icon fonts where possible to reduce the number of image requests.</li>
     </ul>
     <h4>Links</h4>
     <ul>
@@ -446,11 +447,12 @@ layout: default
   <div class="col">
     <h3>CSS</h3>
     <ul>
-      <li>Nest a maximum of three levels <code>.nav ul li</code>. Any more than that can have performance implications.</li>
-      <li>Reduce number of generic attribute selectors <code>[href*="/test"]</code>. They are slow and have to search through every element.</li>
+      <li>Nest a maximum of three levels <code>.nav ul li</code>. Any more than that can have performance implications that can easily be avoided.</li>
+      <li>Reduce number of generic attribute selectors <code>[href*="/test"]</code>. They are slow and have to search through every element on the page.</li>
       <li>Optimize selectors to be as efficient as possible.</li>
       <li>Use OOCSS to reuse classes and make your CSS more efficient.</li>
       <li>CSS should always be located in the <code>&lt;head&gt;</code> and before any JavaScript to speed up rendering of the page.</li>
+      <li>Don't use CSS <code>@import</code>. It's very slow and blocks rendering of the page. It's alright to use in a LESS stylesheet, but only by pulling in other LESS files.</li>
     </ul>
   </div>
   <div class="col">
