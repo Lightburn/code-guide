@@ -166,6 +166,7 @@ layout: default
       <p>If the attribute is present, its value must either be the empty string or [...] the attribute's canonical name, with no leading or trailing whitespace.</p>
     </blockquote>
     <p><strong>In short, don't add a value.</strong></p>
+    <p><strong>Note: In Razor a value must be defined for any attribute added. This is the only exception where adding a value is ok for boolean attributes.</strong> e.g. <code>new { required = "" }</code></p>
   </div>
   <div class="col">
     {% highlight html %}{% include html/boolean-attributes.html %}{% endhighlight %}

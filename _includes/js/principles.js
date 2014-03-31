@@ -11,7 +11,7 @@ function p(c)
 }
 
 /* Good */
-$(function(window, document, undefined) {
+(function(window, document, undefined) {
   "use strict";
 
   /* Individual popup element */
