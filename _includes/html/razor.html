@@ -1,0 +1,21 @@
+<!-- Not so great -->
+@{
+    var db = new WebsiteContext();
+    var breadCrumbs = db.BreadCrumbs.Select(b => new { Title = b.Title, Url = b.Url });
+}
+
+<ul class="breadcrumbs">
+    @foreach (var breadcrumb in Model.breadcrumbs)
+    {
+        <li><a href="@breadcrumb.Url">@breadcrumb.Title</a></li>
+    }
+</ul>
+
+
+<!-- Better -->
+<ul class="breadcrumbs">
+    @foreach (var breadcrumb in Model.WebPage.Breadcrumbs)
+    {
+        <li><a href="@breadcrumb.Url">@breadcrumb.Title</a></li>
+    }
+</ul>

@@ -192,7 +192,14 @@ layout: default
 <div class="section" id="html-razor">
   <div class="col">
     <h3>Razor Syntax</h3>
-    <p></p>
+    <p>Razor syntax is used by ASP.NET MVC.</p>
+      <ul>
+          <li>Keep logic out of your razor view files. Logic should be contained in your model/controller.</li>
+          <li>Never access the database or a repository from a razor file.</li>
+      </ul>
+  </div>
+  <div class="col">
+      {% highlight html %}{% include html/razor.html %}{% endhighlight %}
   </div>
 </div>
 
