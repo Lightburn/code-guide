@@ -371,7 +371,7 @@ layout: default
         <h3>Placement</h3>
         <ul>
             <li>99% of JavaScript should be placed in external files, unless small enough to be inlined.</li>
-            <li>All JavaScript should be placed at the end of the <code>&lt;/body&gt;</code> tag. The only exceptions are <a href="http://modernizr.com/">Modernizr</a> or an <a href="https://code.google.com/p/html5shiv/">HTML5Shim/Shiv</a>.</li>
+            <li>All JavaScript should be placed at the end of the <code>&lt;/body&gt;</code> tag. A few exceptions are <a href="http://modernizr.com/">Modernizr</a> or an <a href="https://code.google.com/p/html5shiv/">HTML5Shim/Shiv</a>.</li>
         </ul>
     </div>
     <div class="col">
@@ -385,7 +385,8 @@ layout: default
         <h3>Patterns</h3>
         <ul>
             <li>Build using either the object literal pattern, or the revealing module pattern.</li>
-            <li>Wrap your code in an Immediately Invoked Function Execution (or IIFE)</li>
+            <li>Using patterns helps keep code modular.</li>
+            <li>Wrap your code in an Immediately Invoked Function Execution (or IIFE).</li>
         </ul>
     </div>
     <div class="col">
@@ -406,6 +407,7 @@ layout: default
             <li>Combine CSS and JavaScript files into one file to reduce the number of page requests.</li>
             <li>Limit page requests, each one has a cost. Link to only a few domains, every domain included has to have its DNS looked up, which costs time.</li>
             <li>Optimize images using compression to reduce their size. Visual Studio has an <a href="http://visualstudiogallery.msdn.microsoft.com/a56eddd3-d79b-48ac-8c8f-2db06ade77c3">extension</a> to optimize images for you.</li>
+            <li><a href="https://kraken.io/web-interface">Kraken</a> is the best image optimizer. Use it for large jpegs and pngs.</li>
             <li>Use image sprites or icon fonts where possible to reduce the number of image requests.</li>
         </ul>
         <h4>Links</h4>
