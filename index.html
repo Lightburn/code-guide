@@ -371,13 +371,26 @@ layout: default
     <div class="col">
         <h3>Patterns</h3>
         <ul>
-            <li>Build using either the object literal pattern, or the revealing module pattern.</li>
+            <li>Build using either the object literal pattern, prototype pattern, or the revealing module pattern.</li>
             <li>Using patterns helps keep code modular.</li>
             <li>Wrap your code in an Immediately Invoked Function Execution (or IIFE).</li>
         </ul>
     </div>
     <div class="col">
         {% highlight js %}{% include js/patterns.js %}{% endhighlight %}
+    </div>
+</div>
+
+<div class="section" id="javascript-patterns">
+    <div class="col">
+        <h3>Templating</h3>
+        <ul>
+            <li>At Lightburn we use <a href="http://underscorejs.org/" target="_blank">underscores</a> built in templating engine.</li>
+        </ul>
+    </div>
+    <div class="col">
+        {% highlight js %}{% include js/templating.html %}{% endhighlight %}
+        {% highlight js %}{% include js/templating.js %}{% endhighlight %}
     </div>
 </div>
 
