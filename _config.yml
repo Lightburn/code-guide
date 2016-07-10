@@ -4,4 +4,4 @@ url:           http://lightburn.github.com/code-guide
 
 markdown:      rdiscount
 permalink:     pretty
-pygments:      true
+rouge:      true
