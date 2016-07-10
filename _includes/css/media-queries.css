@@ -1,10 +1,10 @@
 .element { ... }
-.element-avatar { ... }
-.element-selected { ... }
+.element__avatar { ... }
+.element--selected { ... }
 
 /* Located at the bottom of the page */
 @media (min-width: 480px) {
   .element { ...}
-  .element-avatar { ... }
-  .element-selected { ... }
+  .element__avatar { ... }
+  .element--selected { ... }
 }

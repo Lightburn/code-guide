@@ -5,5 +5,5 @@ span { ... }
 
 /* Good example */
 .avatar { ... }
-.tweet-header .username { ... }
-.tweet .avatar { ... }
+.tweet__header-username { ... }
+.avatar--tweet { ... }

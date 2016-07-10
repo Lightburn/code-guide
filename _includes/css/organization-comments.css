@@ -14,4 +14,4 @@
 .element { ... }
 
 /* Contextual sub-component or modifer */
-.element-heading { ... }
+.element__heading { ... }
