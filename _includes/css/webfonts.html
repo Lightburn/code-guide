@@ -1,6 +1,14 @@
 <!-- Loading typekit -->
-<script src="//use.typekit.net/fsb4cln.js"></script>
-<script>try { Typekit.load(); } catch (e) { }</script>
+<script>
+    (function(d) {
+    var config = {
+        kitId: 'igq6ofz',
+        scriptTimeout: 3000,
+        async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+</script>
 
 <!-- Google webfonts -->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
@@ -8,10 +16,9 @@
 <!-- CSS (inline for example only) -->
 <style>
     @font-face {
-        font-family: 'fontello';
-        src: url('/css/fonts/fontello.eot?22210568');
-        src: url('/css/fonts/fontello.eot?22210568#iefix') format('embedded-opentype'), url('/css/fonts/fontello.woff?22210568') format('woff'), url('/css/fonts/fontello.ttf?22210568') format('truetype'), url('/css/fonts/fontello.svg?22210568#fontello') format('svg');
-        font-weight: normal;
-        font-style: normal;
+        font-family: 'MyWebFont';
+        src: url('myfont.woff2') format('woff2'),
+            url('myfont.woff') format('woff'),
+            url('myfont.ttf') format('truetype');
     }
 </style>

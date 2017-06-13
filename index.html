@@ -345,6 +345,10 @@ layout: default
             <li><a href="https://typekit.com/">Typekit</a></li>
             <li><a href="https://www.google.com/fonts">Google Fonts</a></li>
         </ul>
+        <p>Additional reading:</p>
+        <ul>
+            <li><a href="https://css-tricks.com/snippets/css/using-font-face/">Using @font-face</a></li>
+        </ul>
     </div>
     <div class="col">
         {% highlight html %}{% include css/webfonts.html %}{% endhighlight %}
@@ -375,14 +379,14 @@ layout: default
         <ul>
             <li>Use logical names for variables and functions. Always declare them in camelCase.</li>
             <li>Don't manually minify, that's what we have minifiers for.</li>
-            <li>Feature detect, never browser detect. <a href="http://modernizr.com">Modernizr</a> is what you should be using to do this.</li>
+            <li>Feature detect, never browser detect. Use <a href="http://modernizr.com">Modernizr</a> when applicable or roll your own.</li>
             <li>Don't use <code>document.write()</code></li>
             <li>Constants or configuration variables should be at the top of the file or function.</li>
             <li>Use comments generously, but make sure to provide context.</li>
             <li>Try to wrap your code with IIFE's (Immediately Invoked Function Execution or anonymous functions) to reduce global variables and control scope.</li>
             <li>Code in <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/Strict_mode">strict mode</a> for better error handling <code>"use strict";</code>.</li>
             <li>Prefix jQuery collections with the $ sign. e.g. <code>$header</code>.</li>
-            <li>Functions that function as classes should be declared with a capital letter.</li>
+            <li>Functions that function as classes should follow PascalCase.</li>
             <li>Reduce dependencies on third party code.</li>
         </ul>
     </div>
@@ -396,7 +400,7 @@ layout: default
         <h3>Placement</h3>
         <ul>
             <li>99% of JavaScript should be placed in external files, unless small enough to be inlined.</li>
-            <li>All JavaScript should be placed at the end of the <code>&lt;/body&gt;</code> tag. A few exceptions are <a href="http://modernizr.com/">Modernizr</a> or an <a href="https://code.google.com/p/html5shiv/">HTML5Shim/Shiv</a>.</li>
+            <li>All JavaScript should be placed at the end of the <code>&lt;/body&gt;</code> tag with the <code>defer</code> attribute.</li>
         </ul>
     </div>
     <div class="col">
