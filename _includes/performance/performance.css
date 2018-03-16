@@ -4,9 +4,9 @@ a#header ul .list-item {
 }
 
 /* Good example */
-.modal-header {
+.modal__header {
   ...
 }
-.modal-title {
+.modal__title {
   ...
 }

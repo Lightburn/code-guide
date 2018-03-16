@@ -1,23 +1,22 @@
-/* Object literal pattern */
+/* Object literal pattern used on older sites */
 var modal = {
   init: function() {
 
   }
 };
 
-/* Revealing module pattern / written like a Class */
-function Popup(config) {
-  var settings = $.extend({
-    class: ""
-  }, config);
-
-  function init() {
-
+/* ES2015 class w/ webpack */
+class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
   }
-
-  init();
-
-  return {
-
-  };
+  // Getter
+  get area() {
+    return this.calcArea();
+  }
+  // Method
+  calcArea() {
+    return this.height * this.width;
+  }
 }

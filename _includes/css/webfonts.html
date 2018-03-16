@@ -1,4 +1,4 @@
-<!-- Loading typekit -->
+<!-- Loading typekit async -->
 <script>
     (function(d) {
     var config = {
@@ -12,13 +12,25 @@
 
 <!-- Google webfonts -->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+<!-- or async/non-render blocking -->
+<script>
+    var WebFontConfig = {
+        google: { families: [ 'Sanchez:400' ] }
+    };
+    (function() {
+        var wf = document.createElement('script');
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+    })();
+</script>
 
 <!-- CSS (inline for example only) -->
 <style>
     @font-face {
         font-family: 'MyWebFont';
         src: url('myfont.woff2') format('woff2'),
-            url('myfont.woff') format('woff'),
-            url('myfont.ttf') format('truetype');
+            url('myfont.woff') format('woff');
     }
 </style>

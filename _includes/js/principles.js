@@ -11,24 +11,29 @@ function p(c)
 }
 
 /* Good */
-(function(window, document, undefined) {
-  "use strict";
+import { Utils } from "../utils";
 
-  /* Individual popup element */
-  function Popup(config) {
-    var settings = $.extend({
-      class: ""
-    }, config);
-
-    function init() {
-
-    }
-
-    init();
-
-    return {
-
-    };
+/* Sets and removes padding on the body for the fixed footer */
+export default class Footer {
+  constructor() {
+    this.footer = document.querySelector(".site-footer");
+    
+    this.run();
+    this.setHeight();
+  }
+  
+  run() {
+    window.addEventListener("resize", Utils.debounce(() => {
+      this.setHeight();
+    }, 100));
   }
 
-})(this, this.document);
+  setHeight() {
+    if(window.innerWidth > 768){
+      document.body.style.paddingBottom = this.footer.clientHeight + "px";
+    }
+    else {
+      document.body.style.paddingBottom = "";
+    }
+  }
+}

@@ -12,7 +12,7 @@
 
 /* Syntax */
 /* Bad CSS */
-.selector, .selector-secondary, .selector[type=text] {
+.selector, .selector--secondary, .selector[type=text] {
   padding:15px;
   margin:0px 0px 15px;
   background-color:rgba(0, 0, 0, 0.5);
@@ -21,7 +21,7 @@
 
 /* Good CSS */
 .selector,
-.selector-secondary,
+.selector--secondary,
 .selector[type="text"] {
   padding: 15px;
   margin: 0 0 15px;

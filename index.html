@@ -13,7 +13,6 @@ layout: default
             <li><a href="#html-syntax">Syntax</a></li>
             <li><a href="#html-doctype">HTML5 doctype</a></li>
             <li><a href="#html-lang">Language attribute</a></li>
-            <li><a href="#html-ie-compatibility-mode">Internet Explorer compatibility mode</a></li>
             <li><a href="#html-encoding">Character encoding</a></li>
             <li><a href="#html-style-script">CSS and JavaScript includes</a></li>
             <li><a href="#html-practicality">Practicality over purity</a></li>
@@ -27,7 +26,6 @@ layout: default
         <h4><a href="#css">CSS</a></h4>
         <ul>
             <li><a href="#css-syntax">CSS syntax</a></li>
-            <li><a href="#css-media-queries">Media query placement</a></li>
             <li><a href="#css-nesting">Nesting in Less and Sass</a></li>
             <li><a href="#css-comments">Comments</a></li>
             <li><a href="#css-classes">Classes</a></li>
@@ -118,17 +116,6 @@ layout: default
     </div>
     <div class="col">
         {% highlight html %}{% include html/lang.html %}{% endhighlight %}
-    </div>
-</div>
-
-<div class="section" id="html-ie-compatibility-mode">
-    <div class="col">
-        <h3>IE compatibility mode</h3>
-        <p>Internet Explorer supports the use of a document compatibility <code>&lt;meta&gt;</code> tag to specify what version of IE the page should be rendered as. Unless circumstances require otherwise, it's most useful to instruct IE to use the latest supported mode with <strong>edge mode</strong>.</p>
-        <p>For more information, <a href="http://stackoverflow.com/questions/6771258/whats-the-difference-if-meta-http-equiv-x-ua-compatible-content-ie-edge-e">read this awesome Stack Overflow article</a>.</p>
-    </div>
-    <div class="col">
-        {% highlight html %}{% include html/ie-compatibility-mode.html %}{% endhighlight %}
     </div>
 </div>
 
@@ -254,16 +241,6 @@ layout: default
     </div>
 </div>
 
-<div class="section" id="css-media-queries">
-    <div class="col">
-        <h3>Media query placement</h3>
-        <p>Place media queries at the bottom of the page.</p>
-    </div>
-    <div class="col">
-        {% highlight css %}{% include css/media-queries.css %}{% endhighlight %}
-    </div>
-</div>
-
 <div class="section" id="css-nesting">
     <div class="col">
         <h3>Nesting in Less and Sass</h3>
@@ -289,7 +266,7 @@ layout: default
     <div class="col">
         <h3>Class names</h3>
         <ul>
-            <li>Keep classes lowercase and use dashes (not underscores or camelCase). Dashes serve as natural breaks in related class (e.g., <code>.btn</code> and <code>.btn-danger</code>).</li>
+            <li>Keep classes lowercase and use dashes (not underscores or camelCase). Dashes serve as natural breaks in related class (e.g., <code>.btn</code> and <code>.btn--danger</code>).</li>
             <li>Avoid excessive and arbitrary shorthand notation. <code>.btn</code> is useful for <em>button</em>, but <code>.s</code> doesn't mean anything.</li>
             <li>Keep classes as short and succinct as possible.</li>
             <li>Use meaningful names; use structural or purposeful names over presentational.</li>
@@ -340,7 +317,7 @@ layout: default
 <div class="section" id="css-webfonts">
     <div class="col">
         <h3>Web fonts</h3>
-        <p>We use a number of services to get web fonts. You want your fonts to be loaded ASAP, so always have them in the header.</p>
+        <p>We use a number of services to get web fonts. You want your fonts to be loaded ASAP, so always have them in the head tag.</p>
         <ul>
             <li><a href="https://typekit.com/">Typekit</a></li>
             <li><a href="https://www.google.com/fonts">Google Fonts</a></li>
@@ -383,10 +360,7 @@ layout: default
             <li>Don't use <code>document.write()</code></li>
             <li>Constants or configuration variables should be at the top of the file or function.</li>
             <li>Use comments generously, but make sure to provide context.</li>
-            <li>Try to wrap your code with IIFE's (Immediately Invoked Function Execution or anonymous functions) to reduce global variables and control scope.</li>
             <li>Code in <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/Strict_mode">strict mode</a> for better error handling <code>"use strict";</code>.</li>
-            <li>Prefix jQuery collections with the $ sign. e.g. <code>$header</code>.</li>
-            <li>Functions that function as classes should follow PascalCase.</li>
             <li>Reduce dependencies on third party code.</li>
         </ul>
     </div>
@@ -400,7 +374,7 @@ layout: default
         <h3>Placement</h3>
         <ul>
             <li>99% of JavaScript should be placed in external files, unless small enough to be inlined.</li>
-            <li>All JavaScript should be placed at the end of the <code>&lt;/body&gt;</code> tag with the <code>defer</code> attribute.</li>
+            <li>JavaScript can be placed in the <code>&lt;head&gt;</code> if using the defer attribute, otherwise place before the closing <code>&lt;/body&gt;</code> tag.</li>
         </ul>
     </div>
     <div class="col">
@@ -413,9 +387,13 @@ layout: default
     <div class="col">
         <h3>Patterns</h3>
         <ul>
-            <li>Build using either the object literal pattern, prototype pattern, or the revealing module pattern.</li>
-            <li>Using patterns helps keep code modular.</li>
-            <li>Wrap your code in an Immediately Invoked Function Execution (or IIFE).</li>
+            <li>You'll see a lot of the object literal pattern in our older projects.</li>
+            <li>Use webpack with babel for new projects</li>
+        </ul>
+        <p>Additional reading:</p>
+        <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">JS Classes</a></li>
+            <li><a href="https://webpack.js.org/">Webpack</a></li>
         </ul>
     </div>
     <div class="col">
@@ -451,11 +429,10 @@ layout: default
         <ul>
             <li>Make sure gzipping or mod deflate is enabled.</li>
             <li>Minify CSS and JavaScript for smaller file size, plus other added benefits.</li>
-            <li>Combine CSS and JavaScript files into one file to reduce the number of page requests.</li>
-            <li>Limit page requests, each one has a cost. Link to only a few domains, every domain included has to have its DNS looked up, which costs time.</li>
-            <li>Optimize images using compression to reduce their size. Visual Studio has an <a href="http://visualstudiogallery.msdn.microsoft.com/a56eddd3-d79b-48ac-8c8f-2db06ade77c3">extension</a> to optimize images for you.</li>
+            <li>Combine CSS and JavaScript files into one file to reduce the number of page requests (this is questionable with HTTP2, but azure still doesn't support as of 3/16/2018).</li>
+            <li>Limit page requests, each one has a cost. Link to only a few domains, every domain included needs a DNS lookup.</li>
+            <li>Optimize images using compression to reduce their size.</li>
             <li><a href="https://kraken.io/web-interface">Kraken</a> is the best image optimizer. Use it for large jpegs and pngs.</li>
-            <li>Use image sprites or icon fonts where possible to reduce the number of image requests.</li>
         </ul>
         <h4>Links</h4>
         <ul>
@@ -472,7 +449,6 @@ layout: default
             <li>Nest a maximum of three levels <code>.nav ul li</code>. Any more than that can have performance implications that can easily be avoided.</li>
             <li>Reduce number of generic attribute selectors <code>[href*="/test"]</code>. They are slow and have to search through every element on the page.</li>
             <li>Optimize selectors to be as efficient as possible.</li>
-            <li>Use OOCSS to reuse classes and make your CSS more efficient.</li>
             <li>CSS should always be located in the <code>&lt;head&gt;</code> and before any JavaScript to speed up rendering of the page.</li>
             <li>Don't use CSS <code>@import</code>. It's very slow and blocks rendering of the page. It's alright to use in a LESS stylesheet, but only by pulling in other LESS files.</li>
         </ul>
@@ -487,16 +463,14 @@ layout: default
         <h3>JavaScript</h3>
         <ul>
             <li>Cache jQuery collections when used more than once.</li>
-            <li>JavaScript should always be located right before the end <code>&lt;body&gt;</code> tag to reduce resource blocking.</li>
-            <li>Load in JavaScript <code>async</code> to reduce blocking of other resources.</li>
+            <li>Load in JavaScript <code>async</code> or <code>defer</code> to reduce blocking of other resources.</li>
             <li>Use smart selectors, generic attribute selectors are slow <code>[href*="/test"]</code>. If you can narrow the search, do it <code>#header [href*="/test"]</code>.</li>
-            <li>Use <a href="https://learn.jquery.com/events/event-delegation/">event delegation</a> instead of adding listeners to multiple elements. jQuery makes this easy with <code>.on</code>.</li>
             <li>ID selectors are the fastest, tags are second, and classes are third. Avoid the universal selector <code>*</code>.</li>
             <li><code>$.each</code> is slow. Use a native <code>for</code> loop where possible and definitely when looping over a large amount of elements.</li>
         </ul>
     </div>
     <div class="col">
-        {% highlight js %}{% include performance/performance.js %}{% endhighlight %}
+        
     </div>
 </div>
 
