@@ -360,8 +360,8 @@ layout: default
             <li>Don't use <code>document.write()</code></li>
             <li>Constants or configuration variables should be at the top of the file or function.</li>
             <li>Use comments generously, but make sure to provide context.</li>
-            <li>Code in <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/Strict_mode">strict mode</a> for better error handling <code>"use strict";</code>.</li>
             <li>Reduce dependencies on third party code.</li>
+            <li>Add the <code>defer</code> attribute to improve script loading performance.</li>
         </ul>
     </div>
     <div class="col">
@@ -389,6 +389,7 @@ layout: default
         <ul>
             <li>You'll see a lot of the object literal pattern in our older projects.</li>
             <li>Use webpack with babel for new projects</li>
+            <li>JavaScript classes, introduced in ES2015, is how you should organize and write your code.</li>
         </ul>
         <p>Additional reading:</p>
         <ul>
@@ -429,8 +430,7 @@ layout: default
         <ul>
             <li>Make sure gzipping or mod deflate is enabled.</li>
             <li>Minify CSS and JavaScript for smaller file size, plus other added benefits.</li>
-            <li>Combine CSS and JavaScript files into one file to reduce the number of page requests (this is questionable with HTTP2, but azure still doesn't support as of 3/16/2018).</li>
-            <li>Limit page requests, each one has a cost. Link to only a few domains, every domain included needs a DNS lookup.</li>
+            <li>Limit resource requests, each one has a cost. Link to only a few domains, every domain included needs a DNS lookup.</li>
             <li>Optimize images using compression to reduce their size.</li>
             <li><a href="https://kraken.io/web-interface">Kraken</a> is the best image optimizer. Use it for large jpegs and pngs.</li>
         </ul>
@@ -450,7 +450,7 @@ layout: default
             <li>Reduce number of generic attribute selectors <code>[href*="/test"]</code>. They are slow and have to search through every element on the page.</li>
             <li>Optimize selectors to be as efficient as possible.</li>
             <li>CSS should always be located in the <code>&lt;head&gt;</code> and before any JavaScript to speed up rendering of the page.</li>
-            <li>Don't use CSS <code>@import</code>. It's very slow and blocks rendering of the page. It's alright to use in a LESS stylesheet, but only by pulling in other LESS files.</li>
+            <li>Don't use CSS <code>@import</code>. It's very slow and blocks rendering of the page. It's alright to use in a SASS stylesheet, but only by pulling in other SASS files.</li>
         </ul>
     </div>
     <div class="col">

@@ -11,7 +11,7 @@ function p(c)
 }
 
 /* Good */
-import { Utils } from "../utils";
+import { debounce } from "../utils";
 
 /* Sets and removes padding on the body for the fixed footer */
 export default class Footer {
@@ -23,13 +23,13 @@ export default class Footer {
   }
   
   run() {
-    window.addEventListener("resize", Utils.debounce(() => {
+    window.addEventListener("resize", debounce(() => {
       this.setHeight();
     }, 100));
   }
 
   setHeight() {
-    if(window.innerWidth > 768){
+    if(window.innerWidth > 768) {
       document.body.style.paddingBottom = this.footer.clientHeight + "px";
     }
     else {
